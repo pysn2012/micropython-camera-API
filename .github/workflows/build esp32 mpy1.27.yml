@@ -13,10 +13,10 @@ env:
   MICROPYTHON_DIR: ${{ github.workspace }}/micropython
   ESP_IDF_DIR: ${{ github.workspace }}/esp-idf
   ARTIFACTS_DIR: ${{ github.workspace }}/artifacts
-  # micropython版本，可以修改
-  MPY_VERSION: v1.25.0
-  # esp-idf版本，不建议修改
-  ESP_IDF_VERSION: v5.4.1
+  # micropython版本
+  MPY_VERSION: v1.27.0
+  # esp-idf版本
+  ESP_IDF_VERSION: v5.5.1
 
 jobs:
   build:
@@ -29,15 +29,21 @@ jobs:
           - board: ESP32_GENERIC_S3
             variant: SPIRAM_OCT
             flash_size: 16
-          - board: ESP32_GENERIC_S3
-            variant: SPIRAM_OCT
-            flash_size: 4
-          - board: ESP32_GENERIC_S3
+          - board: ESP32_GENERIC_C3
             variant: ""
-            flash_size: 16
+            flash_size: 4
           - board: ESP32_GENERIC
             variant: SPIRAM
+            flash_size: 4
+          - board: ESP32_GENERIC_P4
+            variant: C6_WIFI
             flash_size: 16
+          - board: ESP32_GENERIC_P4
+            variant: C5_WIFI
+            flash_size: 16
+          - board: ESP32_GENERIC_C5
+            variant: ""
+            flash_size: 4
 
     steps:
       # 1. 检出当前仓库（其实没用）
