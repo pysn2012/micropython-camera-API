@@ -1,4 +1,4 @@
-name: build mpy with camera1.27
+name: build mpy with camera1.25
 
 # 仅手动触发
 on:
@@ -27,14 +27,23 @@ jobs:
       # 开发板矩阵，可以添加不同的开发板
         include:
           - board: ESP32_GENERIC_S3
-            variant: ""
-            flash_size: 8
-          - board: ESP32_GENERIC_S3
             variant: SPIRAM_OCT
             flash_size: 16
-          - board: ESP32_GENERIC_S3
-            variant: SPIRAM_OCT
-            flash_size: 8
+          - board: ESP32_GENERIC_C3
+            variant: ""
+            flash_size: 4
+          - board: ESP32_GENERIC
+            variant: SPIRAM
+            flash_size: 4
+          - board: ESP32_GENERIC_P4
+            variant: C6_WIFI
+            flash_size: 16
+          - board: ESP32_GENERIC_P4
+            variant: C5_WIFI
+            flash_size: 16
+          - board: ESP32_GENERIC_C5
+            variant: ""
+            flash_size: 4
 
     steps:
       # 1. 检出当前仓库
